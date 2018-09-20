@@ -12,7 +12,7 @@ public class Main {
 			if (sc_a.length() == 5) {
 				System.out.println(gm.GetMessage(sc_a));
 			} else {
-				System.out.println("输入错误，格式为栋数+宿舍号，如11510");
+				System.out.println("输入错误，格式为栋数+宿舍号，如10101");
 			}
 		}
 		
