@@ -1,4 +1,4 @@
-# GDPD-Electricity-bill-inquiry
+# GDPD-Electricity-bill-inquiry（校园电费查询）
 ## 开端
 	> 校园的养老生活，实在太无聊了，然后最近学校的查电费公众号坏了，顺便也开始了解下（爬取）大数据怎么玩~
 ## 问题
