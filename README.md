@@ -14,10 +14,10 @@
 ![图片1](https://raw.githubusercontent.com/Mr-huangyh/GDPD-Electricity-bill-inquiry/master/Img/1.png)
 3.抓包发现他会访问（http://dian.gdlgxy.com/RoomSelect/GetRoomInfo?Apartid="不知名代码"&Roomname="宿舍号"）返回一个Html代码，其中就包含了宿舍号，已经使用的电量，剩余电量，抄表的时间。
 ![图片2](https://raw.githubusercontent.com/Mr-huangyh/GDPD-Electricity-bill-inquiry/master/Img/2.jpg)
-4.尝试使用 "10101" 进行测试，翻了下html代码，发现不知名代码就是选择的栋数后下拉框返回给Js代码，[记录栋数与其相符的代码]
+4.尝试使用 "10101" 进行测试，翻了下html代码，发现不知名代码就是选择的栋数后下拉框返回给Js代码，-记录栋数与其相符的代码
 ![图片3](https://raw.githubusercontent.com/Mr-huangyh/GDPD-Electricity-bill-inquiry/master/Img/3.jpg)
 5.然后使用Post方法，取返回数据。
 ### 拆分数据
->其实这个没什么好讲的，从post取回数据，将编码转为UTF-8编码[解决乱码问题]，因为他们都被包含在"<label class="infolab">"和"</label>"之间，我使用的是字节分割成数组，取单数数组提取信息，可以使用正则表达式去替换，分割数组比较傻瓜就用了分割数组，如果对速度要求快，可以自己改。
+>其实这个没什么好讲的，从post取回数据，将编码转为UTF-8编码[解决乱码问题]，因为他们都被包含在"<"label class="infolab">"和"<"/label">"之间，我使用的是字节分割成数组，取单数数组提取信息，可以使用正则表达式去替换，分割数组比较傻瓜就用了分割数组，如果对速度要求快，可以自己改。
 ## PS
 * 已经开源，如做任何其他用途，均与本人无关。
