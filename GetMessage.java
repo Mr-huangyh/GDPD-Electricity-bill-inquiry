@@ -43,7 +43,6 @@ public class GetMessage {
 						break;
 					}
 					Getcut += Gcut[j];
-					System.out.println(Gcut[j]);
 				}
 				return Getcut;
 			}
@@ -181,9 +180,6 @@ public class GetMessage {
 		A = A.replace("\r", "");
 		A = A.replace("\n", "");
 		A = A.replace(" ", "");
-		System.out.println(A);
-		A = A.replaceAll("[?]", "");
-		System.out.println(A);
 		A = A.replace("ÐÇÆÚ", " ");
 		
 		String[] C = A.split("<labelclass=\"infolab\">|</label>");
@@ -206,8 +202,7 @@ public class GetMessage {
 		Pattern pattern = Pattern.compile(BiaoDaShiCode);
 		Matcher matcher = pattern.matcher(insize);
 		matcher.find();
-		String string = matcher.group();
-	    System.out.println(string);   
+		String string = matcher.group(); 
 		return string;
 		
 	}
