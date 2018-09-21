@@ -1,6 +1,7 @@
 package Main;
 
 import java.net.*;
+import java.util.regex.*;
 
 public class GetMessage {
 	public String GetMessage(String i) {
@@ -26,15 +27,23 @@ public class GetMessage {
 						break;
 					case 1:
 						Getcut += " 使用电量：";
+						String a1 = Gcut[j];
+						Gcut[j] = ZhengZe(a1,"\\d+\\.\\d+");
 						break;
 					case 2:
 						Getcut += " 剩余电量：";
+						String a2 = Gcut[j];
+						Gcut[j] = ZhengZe(a2,"-\\d+\\.\\d+|\\d+\\.\\d");
 						break;
 					case 3:
 						Getcut += " 时间：";
+						String a3 = Gcut[j];
+						Gcut[j] = ZhengZe(a3,"\\d+/\\d/\\d+");
+						Gcut[j] +=" " + ZhengZe(a3,"[\\u4e00-\\u9fa5]*\\d+:\\d+:\\d+");
 						break;
 					}
 					Getcut += Gcut[j];
+					System.out.println(Gcut[j]);
 				}
 				return Getcut;
 			}
@@ -160,7 +169,7 @@ public class GetMessage {
         //System.out.println(a);
         //System.out.println(b);
         byte[] rs_bytecode = rs.getBytes();
-        String rs_encode = new String(rs_bytecode,"UTF-8");
+        String rs_encode = new String(rs_bytecode,"utf-8");
         return rs_encode;
     }catch(Exception e ){
         e.printStackTrace();
@@ -173,7 +182,7 @@ public class GetMessage {
 		A = A.replace("\n", "");
 		A = A.replace(" ", "");
 		System.out.println(A);
-		A = A.replaceAll("[?]", "c");
+		A = A.replaceAll("[?]", "");
 		System.out.println(A);
 		A = A.replace("星期", " ");
 		
@@ -192,6 +201,15 @@ public class GetMessage {
 		//}
 		//System.out.println(Chun.length);
 		return Chun;
+	}
+	private String ZhengZe(String insize,String BiaoDaShiCode) {
+		Pattern pattern = Pattern.compile(BiaoDaShiCode);
+		Matcher matcher = pattern.matcher(insize);
+		matcher.find();
+		String string = matcher.group();
+	    System.out.println(string);   
+		return string;
+		
 	}
 }
 

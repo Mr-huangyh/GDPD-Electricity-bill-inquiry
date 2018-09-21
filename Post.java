@@ -47,7 +47,7 @@ public class Post {
         //获取浏览器的返回数据
         BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream() ) );
         String line = reader.readLine();
-        line = new String(line.getBytes() , "utf-8" );  //解决乱码的问题
+        line = new String(line.getBytes() , "UTF-8" );  //解决乱码的问题
         while(line != null ){
             //System.out.println(line );
             builder.append(line + "\r\n" );
